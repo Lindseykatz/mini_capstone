@@ -11,7 +11,7 @@ product = my_product.parse
   # random_product = []
   # random_product << product["products="].rand(3)
   # p random_product
-p product
+pp product
 
 table = TTY::Table.new ['header1','header2'], [['a1', 'a2'], ['b1', 'b2']]
 puts table.render(:ascii)
