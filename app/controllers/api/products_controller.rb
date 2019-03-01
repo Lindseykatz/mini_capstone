@@ -29,5 +29,11 @@ class Api::ProductsController < ApplicationController
     @input_product.description = params[:body_description] || @input_product.description 
     render "show.json.jbuilder"
   end
-  
+
+  def destroy
+    @input_product = Product.find_by(id: params[:id])
+    @input_product.destroy
+    render json: {message: "You successfully removed your product."}
+  end
+
 end
