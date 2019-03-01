@@ -1,33 +1,24 @@
 class Api::ProductsController < ApplicationController
-  def all_products_method
+
+  def index
     @all_products = Product.all
-    render "product.json.jbuilder"
+    render "index.json.jbuilder"
   end
 
-  def first_product_method
-    @product_first = Product.first
-    render "product.json.jbuilder"
+  def show
+    @input_product = Product.find_by(id: params[:id])
+    render "show.json.jbuilder"
   end
 
-  def second_product_method
-    @product_second = Product.second
-    render "product.json.jbuilder"
+  def create
+    @input_product = Product.new(
+      name: params[:body_name],
+      price: params[:body_price],
+      description: params[:body_description],
+      image_url: params[:body_image_url]
+      )
+    @input_product.save
+    render "show.json.jbuilder"
   end
 
-  def third_product_method
-    @product_third = Product.third
-    render "product.json.jbuilder"
-  end
-
-  def search_product_method
-    input_product = params["search_product"].to_i
-    @input_product = Product.find_by(id: input_product)
-    render "product.json.jbuilder"
-  end
-
-  def search_product_body_method
-    input_product = params["search_product_body"].to_i
-    @input_body_product = Product.find_by(id: input_product)
-    render "product.json.jbuilder"
-  end    
 end
