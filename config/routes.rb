@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     get "/third_product_url" => "products#third_product_method"
     get "/search_product_url" => "products#search_product_method"
     get "/search_product_url/:search_product" => "products#search_product_method"
+    post "/search_product_body_url" => "products#search_product_body_method"
   end
 end

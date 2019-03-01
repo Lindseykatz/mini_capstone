@@ -24,4 +24,10 @@ class Api::ProductsController < ApplicationController
     @input_product = Product.find_by(id: input_product)
     render "product.json.jbuilder"
   end
+
+  def search_product_body_method
+    input_product = params["search_product_body"].to_i
+    @input_body_product = Product.find_by(id: input_product)
+    render "product.json.jbuilder"
+  end    
 end
