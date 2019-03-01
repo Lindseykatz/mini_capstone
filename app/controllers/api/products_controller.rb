@@ -14,8 +14,8 @@ class Api::ProductsController < ApplicationController
     @input_product = Product.new(
       name: params[:body_name],
       price: params[:body_price],
-      description: params[:body_description],
-      image_url: params[:body_image_url]
+      image_url: params[:body_image_url],
+      description: params[:body_description]
       )
     @input_product.save
     render "show.json.jbuilder"
