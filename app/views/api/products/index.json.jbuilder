@@ -1,7 +1,8 @@
-json.array! @all_products.each do |products|
-  json.product_id = products.id
-  json.product_name = products.name
-  json.product_price = products.price
-  json.product_description = products.description
-  json.product_image = products.image_url
+json.array! @products.each do |products|
+  json.id products.id
+  json.name products.name
+  json.price products.price
+  json.description products.description
+  json.image_url products.image_url
+  json.updated_at products.friendly_updated_at
 end
