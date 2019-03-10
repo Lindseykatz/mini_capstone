@@ -2,7 +2,6 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
   validates :description, presence: true
-  validates :image_url, presence: true
   validates :name, uniqueness: true
   validates :price, numericality: { greater_than: 0}
   validates :description, length: { in:2..500 }
@@ -28,4 +27,9 @@ class Product < ApplicationRecord
   def supplier
     Supplier.find_by(id: supplier_id)
   end
+
+  def images
+    Image.where(product_id: id)
+  end
+
 end

@@ -1,3 +1,3 @@
-json.array! @products.each do |products|
-  json.partial! "product.json.jbuilder", product: products
+json.array! @products.each do |product|
+  json.partial! "product.json.jbuilder", product: product
 end
