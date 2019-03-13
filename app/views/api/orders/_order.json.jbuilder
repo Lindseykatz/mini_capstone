@@ -4,3 +4,5 @@ json.quantity order.quantity
 json.total order.total
 json.tax order.tax
 json.subtotal order.subtotal
+json.id order.id
+json.product order.product
