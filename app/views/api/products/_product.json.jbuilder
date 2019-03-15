@@ -7,6 +7,6 @@ json.description product.description
 json.discount product.is_discounted?
 json.supplier product.supplier
 json.images product.images
-
+json.categories product.categories
 
 
