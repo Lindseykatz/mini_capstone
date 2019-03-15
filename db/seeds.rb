@@ -12,3 +12,5 @@ product = Product.new({name: "Jean jacket", price: 50, image_url: "https://lsco.
 product.save
 product = Product.new({name: "Raincoat", price: 76, image_url: "https://n.nordstrommedia.com/ImageGallery/store/product/Zoom/10/_103936650.jpg?h=365&w=240&dpr=2&quality=45&fit=fill&fm=jpg", description: "Water repellent jacket"})
 product.save
+
+Product.create! 
