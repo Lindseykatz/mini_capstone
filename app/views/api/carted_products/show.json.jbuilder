@@ -1,1 +1,1 @@
-# json.partial! "cartedproducts.json.jbuidlder", cartedproducts: @carted_product
+json.partial! "cartedproducts.json.jbuilder", carted_product: @carted_product
