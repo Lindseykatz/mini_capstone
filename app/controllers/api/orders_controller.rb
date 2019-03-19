@@ -6,6 +6,11 @@ class Api::OrdersController < ApplicationController
     render "index.json.jbuilder"
   end
 
+  def show
+    @order = Order.find_by(id: params[:id])
+    render "show.json.jbuilder"
+  end
+
   def create
     shopping_cart = current_user.carted_products.where(status: "carted")
 
@@ -39,12 +44,9 @@ class Api::OrdersController < ApplicationController
         p item.order.id
         item.save
       end
-      render json: {message: "yo"}
-      
-    #   render "show.json.jbuilder"
-    
-    # else 
-    #   render json: []
-    # end
+      render "show.json.jbuilder"
+    else 
+      render json: []
+    end
   end
 end
