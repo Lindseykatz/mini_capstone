@@ -11,14 +11,15 @@ class ProductsController < ApplicationController
     render "new.html.erb"
   end
 
-  # def create
-  #   @product = Product.new(
-  #     name: params[:name],
-  #     price: params[:price].to_i,
-  #     description: params[:description],
-  #     supplier_id: params[:supplier_id].to_i,
-  #     )
-  #   @product.save
-  #   render "show.html.erb"
-  # end
+  def create
+    @product = Product.new(
+      name: params[:name],
+      price: params[:price],
+      description: params[:description],
+      supplier_id: params[:supplier_id],
+      )
+    @product.save
+    # render "show.html.erb"
+    redirect_to "/products/#{@product.id}"
+  end
 end
