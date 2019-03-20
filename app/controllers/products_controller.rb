@@ -7,4 +7,18 @@ class ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
     render "show.html.erb"
   end
+  def new
+    render "new.html.erb"
+  end
+
+  # def create
+  #   @product = Product.new(
+  #     name: params[:name],
+  #     price: params[:price].to_i,
+  #     description: params[:description],
+  #     supplier_id: params[:supplier_id].to_i,
+  #     )
+  #   @product.save
+  #   render "show.html.erb"
+  # end
 end
